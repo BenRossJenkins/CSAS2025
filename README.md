@@ -3,7 +3,7 @@
 # Plate Discipline Analysis in MLB Batters Using Survival Analysis
 
 ## Project Overview
-This project analyzes Major League Baseball (MLB) batters' plate discipline by applying survival analysis techniques to Statcast pitch swing data. The goal is to evaluate how different swing characteristics, such as bat speed and swing length, influence the likelihood of swinging at pitches outside the strike zone over successive plate appearances. The analysis incorporates Kaplan-Meier survival curves and Cox Proportional Hazards models to estimate these effects.
+This project analyzes Major League Baseball (MLB) batters' plate discipline by applying survival analysis techniques to Statcast pitch swing data. The goal is to evaluate how different swing characteristics, such as bat speed and swing length, influence the likelihood of swinging at pitches outside the strike zone over successive pitches. To estimate these effects, the analysis incorporates Kaplan-Meier survival curves and Cox Proportional Hazards models.
 
 ## Dataset
 The dataset used in this analysis is `statcast_pitch_swing_data_20240402_20241030_with_arm_angle.csv`, which contains Statcast pitch-level data, including:
@@ -14,9 +14,9 @@ The dataset used in this analysis is `statcast_pitch_swing_data_20240402_2024103
 
 ## Methodology
 1. **Data Cleaning and Preparation:**
-   - Missing values in `bat_speed` and `swing_length` were replaced with 0.
+   - Missing values in `bat_speed` and `swing_length` were replaced with 0. This reflects a pitch that a batter chose not to swing at. 
    - Duplicates were removed based on game, batter, and pitch number.
-   - Plate appearances (`at_bats`) were calculated, limited to a maximum of six.
+   - Pitches faced  (`at_bats`) were calculated
 
 2. **Defining the Outcome:**
    - A binary variable `swung_outside_zone` was created to indicate whether a batter swung at a pitch outside the strike zone.
@@ -29,7 +29,7 @@ The dataset used in this analysis is `statcast_pitch_swing_data_20240402_2024103
    - A stratified Cox model was fitted to account for individual batter effects (`player_name`).
 
 5. **Visualization:**
-   - **Forest Plots** of hazard ratios were created for interpreting the effects of swing mechanics.
+   - **Forest Plots** of hazard ratios were created to interpret the effects of swing mechanics.
    - Survival curves were plotted for batters with varying swing characteristics.
 
 ## How to Run the Analysis
@@ -48,7 +48,7 @@ The dataset used in this analysis is `statcast_pitch_swing_data_20240402_2024103
 
 **Visualization Examples**
 
-- Kaplan-Meier Survival Curve: Displays the probability of avoiding swings outside the strike zone across plate appearances.
+- Kaplan-Meier Survival Curve: Displays the probability of avoiding swings outside the strike zone across pitches.
 - Forest Plot: Visualizes the hazard ratios for swing mechanics, showing which factors increase or decrease risk.
 
 **Project Structure**
