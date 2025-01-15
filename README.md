@@ -3,7 +3,7 @@
 # Plate Discipline Analysis in MLB Batters Using Survival Analysis
 
 ## Project Overview
-This project analyzes Major League Baseball (MLB) batters' plate discipline by applying survival analysis techniques to Statcast pitch swing data. The goal is to evaluate how different swing characteristics, such as bat speed and swing length, influence the likelihood of swinging at pitches outside the strike zone over successive pitches. To estimate these effects, the analysis incorporates Kaplan-Meier survival curves and Cox Proportional Hazards models.
+This project analyzes Major League Baseball (MLB) batters' plate discipline by applying survival analysis techniques to Statcast pitch swing data. The goal is to evaluate how different swing characteristics, such as bat speed and swing length, influence the likelihood of swinging at pitches outside the strike zone across pitches. To estimate these effects, the analysis incorporates Kaplan-Meier survival curves and Cox Proportional Hazards models.
 
 ## Dataset
 The dataset used in this analysis is `statcast_pitch_swing_data_20240402_20241030_with_arm_angle.csv`, which contains Statcast pitch-level data, including:
